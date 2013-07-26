@@ -1,0 +1,31 @@
+.block_searchcourses .yui3-aclist-input{
+	width:350px;
+}
+.block_searchcourses .yui3-aclist-input{color:gray;margin-left:10px}
+.block_searchcourses  .yui3-aclist-content .yui3-aclist-item{background: url([[pix:block_searchcourses|arrow_next_right]])
+no-repeat right top;}
+.block_searchcourses  .yui3-aclist-content .yui3-aclist-item-hover{background: url([[pix:block_searchcourses|arrow_next_right]])
+no-repeat right top;
+opacity:0.6;
+z-index:1;
+}
+.block_searchcourses  .more_info_container #close{background: url([[pix:block_searchcourses|close_button]]) no-repeat top right;height:16px;}
+.block_searchcourses .yui3-aclist-content .yui3-aclist-item-active{background:#B0E0E6;}
+.block_searchcourses .yui3-aclist{overflow:auto;max-height:230px;border:1px rgb(209, 193, 193) solid;}
+.block_searchcourses .yui3-highlight {font-weight:normal;background-color:#B0E0E6;font-style:italic}
+/*Checkbox Styling*/
+#my_courses_container{display:inline-block;
+	margin-left:10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	background:#EEEEEE;
+	}
+#my_courses_container label{
+	display:inline;
+	padding:5px;
+	top:-1px;
+
+	position: relative;
+}
