@@ -16,6 +16,32 @@ $capabilities = array(
         'coursecreator'  => CAP_ALLOW,
         'manager'          => CAP_ALLOW
         )
-    )
+    ),
+    'block/searchcourses:myaddinstance' => array(
+      'riskbitmask' => RISK_PERSONAL,
+      'captype' => 'read',
+      'contextlevel' => CONTEXT_COURSE,
+      'legacy' => array(
+        'guest'          => CAP_PREVENT,
+        'student'        => CAP_ALLOW,
+        'teacher'        => CAP_ALLOW,
+        'editingteacher' => CAP_ALLOW,
+        'coursecreator'  => CAP_ALLOW,
+        'manager'          => CAP_ALLOW
+        )
+     ),
+         'block/searchcourses:addinstance' => array(
+      'riskbitmask' => RISK_PERSONAL,
+      'captype' => 'read',
+      'contextlevel' => CONTEXT_COURSE,
+      'legacy' => array(
+        'guest'          => CAP_PREVENT,
+        'student'        => CAP_ALLOW,
+        'teacher'        => CAP_ALLOW,
+        'editingteacher' => CAP_ALLOW,
+        'coursecreator'  => CAP_ALLOW,
+        'manager'          => CAP_ALLOW
+        )
+     )
 );
     

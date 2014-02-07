@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2013012400;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2011120500;        // Requires this Moodle version
-$plugin->release  = 2013061900;
+$plugin->version   = 2014020703;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2013111800.07;        // Requires this Moodle version
+$plugin->release  = 2014020700;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'block_searchcourses'; // Full name of the plugin (used for diagnostics)
