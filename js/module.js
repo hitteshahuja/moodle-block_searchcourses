@@ -60,6 +60,7 @@ M.search_autocomplete.AutoCompletePlugin = function (Y, node, params) {
         return Y.Array.map(results, function (result) {
             var course = result.raw;
             var coursename = course.fullname;
+            var courseshortname = course.shortname;
             var idnumber = course.idnumber;
             var highlighted = result.highlighted;
             var courselink = M.cfg.wwwroot + '/course/view.php?id=' + course.id;
@@ -74,6 +75,7 @@ M.search_autocomplete.AutoCompletePlugin = function (Y, node, params) {
             return Y.Lang.sub(courseTemplate, {
                 coursename: coursename,
                 courselink: courselink,
+                courseshortname : courseshortname,
                 idnumber: idnumber,
                 highlighted: highlighted
             });
@@ -91,4 +93,4 @@ M.search_autocomplete.AutoCompletePlugin = function (Y, node, params) {
     })
 }
 var noResTemplate = "<div class='course_results_ac'><div class='title'>{msg}</div></div>";
-var courseTemplate = "<div class='course_results_ac'><a href='{courselink}'><div class='title'>({idnumber}) {highlighted}</div></a></div>";
+var courseTemplate = "<div class='course_results_ac'><a href='{courselink}'><div class='title'>({courseshortname}) {highlighted}</div></a></div>";
