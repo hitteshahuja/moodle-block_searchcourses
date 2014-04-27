@@ -1,6 +1,7 @@
 <?php
-define('AJAX_SCRIPT', true);
 require_once('../../config.php');
+require_login();
+define('AJAX_SCRIPT', true);
 require_once($CFG->libdir . '/datalib.php');
 global $CFG;
 $USER;
