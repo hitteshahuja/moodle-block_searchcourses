@@ -73,9 +73,6 @@ class block_searchcourses extends block_base
         }
 
         $form_html = "";
-        $form_html .= $this->page->requires->js_init_call('M.search_autocomplete.init', array(
-            $params
-        ), false, $module);
         $form_html .= "<div id=\"course_search_ac\">";
         $form_html .= "<label for=\"ac-input\">" . get_string('search_label', 'block_searchcourses') . "</label>";
         $form_html .= "<input id=\"ac-input\" type = \"text\" title = \"Start here by typing a course...\"></input>";
