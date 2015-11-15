@@ -57,6 +57,7 @@ class block_searchcourses extends block_base
         global $CFG;
         $this->content = new stdClass();
         $params = array();
+        $this->page->requires->js_call_amd('block_searchcourses/searchcourses', 'initialise', $params);
         $count = "";
         $module = array(
             'name' => 'course_search_ac',
