@@ -79,7 +79,7 @@ class block_searchcourses extends block_base
         $form_html .= "<div id=\"course_search_ac\">";
         $form_html .= "<label for=\"ac-input\">" . get_string('search_label', 'block_searchcourses') . "</label>";
         $form_html .= "<input id=\"ac-input\" type = \"text\" title = \"Start here by typing a course...\"></input>";
-        $form_html .= "<div id=\"my_courses_container\"><label for = \"my_courses_flag\">My Courses</label><input type=\"checkbox\" id=\"my_courses_flag\"  name=\"my_courses_flag\" value=\"0\"/></div>";
+        $form_html .= "<div id=\"my_courses_container\"><label for = \"my_courses_flag\">".get_string('mycourses')."</label><input type=\"checkbox\" id=\"my_courses_flag\"  name=\"my_courses_flag\" value=\"0\"/></div>";
         $form_html .= "<input type=\"hidden\" id=\"course_count\" value=\"$count\" />";
         $form_html .= "</div>";
         $this->content->text = $form_html;
