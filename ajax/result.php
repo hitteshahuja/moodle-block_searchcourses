@@ -34,16 +34,13 @@ if (isset($_GET['my_courses_flag'])  &&  $_GET['my_courses_flag'] == "true") {
         $query
     ), 'fullname ASC', 0, $course_count, $total));
     if (empty($courses['results'])) {
-        $objCourse = new stdClass();
-        $objCourse->id = 'na';
-        $courses['results'] = array_values(array(
-            $objCourse
-        ));
+        $courses = array();
         echo json_encode($courses);
     } else {
         foreach($courses['results'] as $course){
             $objCrse = new \stdClass();
             $objCrse->fullname = $course->fullname;
+            $objCrse->shortname = $course->shortname;
             $objCrse->id = $course->id;
             $arrCourse[] = $objCrse;
             //$arrCourse[]['id']  = $course->id;
