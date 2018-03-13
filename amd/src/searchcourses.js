@@ -18,7 +18,7 @@ define(['jquery', 'core/config',"jqueryui"], function ($, config,jqui) {
 
             $('#course_search_ac .typeahead').autocomplete(
                 {
-                    source: config.wwwroot+"/blocks/searchcourses/ajax/result.php?course_count="+course_count,
+                    source: config.wwwroot+"/blocks/searchcourses/ajax.php?course_count="+course_count,
                     minLength:2
                 }
             ).autocomplete( "instance" )._renderItem = function( ul, item ) {

@@ -89,7 +89,7 @@ M.search_autocomplete.AutoCompletePlugin = function (Y, node, params) {
         resultListLocator: 'results',
         alwaysShowList: true,
         resultTextLocator: 'fullname',
-        source: M.cfg.wwwroot + '/blocks/searchcourses/result.php?query={query}&course_count=' + params.course_count + '&my_courses_flag=' + params.mycourseflag
+        source: M.cfg.wwwroot + '/blocks/searchcourses/ajax.php?query={query}&course_count=' + params.course_count + '&my_courses_flag=' + params.mycourseflag
     })
 }
 var noResTemplate = "<div class='course_results_ac'><div class='title'>{msg}</div></div>";
