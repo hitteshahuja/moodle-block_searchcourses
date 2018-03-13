@@ -1,5 +1,5 @@
 <?php
-require_once('../../../config.php');
+require_once('../../config.php');
 require_login();
 
 if (!defined('AJAX_SCRIPT')) {
@@ -16,7 +16,7 @@ $course_count = 10; // Default value for course result list
 if (!empty($_GET['course_count'])) {
     $course_count = $_GET['course_count'];
 }
-if (isset($_GET['my_courses_flag'])  &&  $_GET['my_courses_flag'] == "true") {
+if (isset($_GET['my_courses_flag']) && $_GET['my_courses_flag'] == "true") {
     $my_courses_flag = $_GET['my_courses_flag'];
     $courses['results'] = enrol_get_my_courses(array('id', 'shortname'), 'visible DESC,sortorder ASC', $course_count);
     //Once you have the results, filter the ones matching the search query
@@ -37,10 +37,11 @@ if (isset($_GET['my_courses_flag'])  &&  $_GET['my_courses_flag'] == "true") {
         $courses = array();
         echo json_encode($courses);
     } else {
-        foreach($courses['results'] as $course){
+        foreach ($courses['results'] as $course) {
             $objCrse = new \stdClass();
             $objCrse->fullname = $course->fullname;
             $objCrse->shortname = $course->shortname;
+            $objCrse->idnumber = $course->idnumber;
             $objCrse->id = $course->id;
             $arrCourse[] = $objCrse;
             //$arrCourse[]['id']  = $course->id;

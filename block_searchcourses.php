@@ -72,10 +72,6 @@ class block_searchcourses extends block_base
         }
         $PAGE->requires->jquery_plugin('ui-css');
         $PAGE->requires->js_call_amd('block_searchcourses/searchcourses', 'initialise', ['course_count' => $count]);
-        /*$module = array(
-            'name' => 'course_search_ac',
-            'fullpath' => '/blocks/searchcourses/js/module.js'
-        );*/
         if (!is_null($this->config)) {
             $params = array(
                 'course_count' => $this->config->course_count
@@ -97,7 +93,11 @@ class block_searchcourses extends block_base
         $form_html .= "<input type=\"hidden\" id=\"course_count\" value=\"$count\" />";
 
         $form_html .= html_writer::end_div();
-        $this->content->text = $form_html;
+
+        //Render from Template
+        $form = new \block_searchcourses\output\searchform();
+        $renderer = $this->page->get_renderer('block_searchcourses');
+        $this->content->text = $renderer->render($form);
         return $this->content;
     }
 }
