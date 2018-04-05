@@ -6,8 +6,8 @@ if (!defined('AJAX_SCRIPT')) {
     define('AJAX_SCRIPT', true);
 }
 require_once($CFG->libdir . '/datalib.php');
-global $CFG;
-$USER;
+require_once($CFG->libdir . '/coursecatlib.php');
+global $CFG,$USER;
 $query = $_GET['term'];
 $my_courses_flag = 0;
 $total = 0;
@@ -42,11 +42,9 @@ if (isset($_GET['my_courses_flag']) && $_GET['my_courses_flag'] == "true") {
             $objCrse->fullname = $course->fullname;
             $objCrse->shortname = $course->shortname;
             $objCrse->idnumber = $course->idnumber;
+            $objCrse->category = \coursecat::get($course->category)->name;
             $objCrse->id = $course->id;
             $arrCourse[] = $objCrse;
-            //$arrCourse[]['id']  = $course->id;
-            //$arrCourse[]['shortname']  = $course->shortname;
-            //$arrCourse[]['description']  = $course->summary;
 
         }
         echo json_encode($arrCourse);

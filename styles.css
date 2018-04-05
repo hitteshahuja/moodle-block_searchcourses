@@ -1,4 +1,4 @@
-.block_searchcourses .yui3-aclist-input{width:75%;}
+.block_searchcourses .yui3-aclist-input{width:100%;}
 .block_searchcourses .yui3-aclist-input{color:gray;margin-left:10px}
 .block_searchcourses  .yui3-aclist-content .yui3-aclist-item{background: url([[pix:block_searchcourses|arrow_next_right]])
 no-repeat right top;}
@@ -14,11 +14,11 @@ z-index:1;
 .yui3-skin-sam .yui3-aclist-content {border:none;} /* To stop ugly border*/
 /*Checkbox Styling*/
 #my_courses_container{display:inline-block;
-	margin-left:10px;
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-top: 5px;
 	padding-bottom: 3px;
+	margin-top: 10px;
 	background:#EEEEEE;
 	}
 #my_courses_container label{
@@ -26,4 +26,18 @@ z-index:1;
 	padding:5px;
 	top:-1px;
 	position: relative;
+}
+#ac-input{
+	width:100%;
+}
+.ui-tooltip {
+	padding: 10px 20px;
+	color: green;
+	border-radius: 20px;
+	font: bold 14px "Helvetica Neue", Sans-Serif;
+	text-transform: uppercase;
+	box-shadow: 0 0 7px black;
+}
+.courseresultnode{
+	font-size:12px;
 }

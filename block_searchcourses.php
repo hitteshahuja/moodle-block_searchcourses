@@ -31,10 +31,17 @@
 class block_searchcourses extends block_base
 {
 
+    /**
+     *
+     */
     public function init()
     {
         $this->title = get_string('pluginname', 'block_searchcourses');
     }
+
+    /**
+     * @return array
+     */
     public function applicable_formats()
     {
         return array(
@@ -59,6 +66,9 @@ class block_searchcourses extends block_base
     }
 
 
+    /**
+     * @return stdClass
+     */
     public function get_content()
     {
         global $CFG,$PAGE;
@@ -86,13 +96,13 @@ class block_searchcourses extends block_base
         //$form_html .= $this->page->requires->js_init_call('M.search_autocomplete.init', array(
           //  $params
         //), false, $module);
-        $form_html .=  html_writer::start_div('', ['id' => 'course_search_ac']);
+        /*$form_html .=  html_writer::start_div('', ['id' => 'course_search_ac']);
         $form_html .= "<label for=\"ac-input\">" . get_string('search_label', 'block_searchcourses') . "</label>";
         $form_html .= "<input id=\"ac-input\" class=\"typeahead\" type = \"text\" placeholder = \"Start here by typing a course...\"/>";
         $form_html .= "<div id=\"my_courses_container\"><label for = \"my_courses_flag\">".get_string('my_courses_label', 'block_searchcourses')."</label><input type=\"checkbox\" id=\"my_courses_flag\"  name=\"my_courses_flag\" value=\"0\"/></div>";
-        $form_html .= "<input type=\"hidden\" id=\"course_count\" value=\"$count\" />";
+        $form_html .= "<input type=\"hidden\" id=\"course_count\" value=\"$count\" />";*/
 
-        $form_html .= html_writer::end_div();
+        //$form_html .= html_writer::end_div();
 
         //Render from Template
         $form = new \block_searchcourses\output\searchform();
