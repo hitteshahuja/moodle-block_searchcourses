@@ -58,8 +58,9 @@ class block_searchcourses extends block_base
      * {@inheritDoc}
      * @see block_base::is_empty()
      */
-    function is_empty() {
-        if ( !has_capability('blocks/searchcourses:view', $this->context) ) {
+    function is_empty()
+    {
+        if (!has_capability('blocks/searchcourses:view', $this->context)) {
             return true;
         }
         return parent::is_empty();
@@ -71,13 +72,12 @@ class block_searchcourses extends block_base
      */
     public function get_content()
     {
-        global $CFG,$PAGE;
+        global $CFG, $PAGE;
         $this->content = new stdClass();
         $params = array();
-        if(is_null($this->config)){
+        if (is_null($this->config)) {
             $count = 0;
-        }
-        else{
+        } else {
             $count = $this->config->course_count;
         }
         $PAGE->requires->jquery_plugin('ui-css');
@@ -86,15 +86,15 @@ class block_searchcourses extends block_base
             $params = array(
                 'course_count' => $this->config->course_count
             );
-           /* $this->page->requires->data_for_js('ac_course_count', array(
-                'count' => $this->config->course_count
-            ));*/
-           $count     = $this->config->course_count;
+            /* $this->page->requires->data_for_js('ac_course_count', array(
+                 'count' => $this->config->course_count
+             ));*/
+            $count = $this->config->course_count;
         }
 
         $form_html = "";
         //$form_html .= $this->page->requires->js_init_call('M.search_autocomplete.init', array(
-          //  $params
+        //  $params
         //), false, $module);
         /*$form_html .=  html_writer::start_div('', ['id' => 'course_search_ac']);
         $form_html .= "<label for=\"ac-input\">" . get_string('search_label', 'block_searchcourses') . "</label>";
