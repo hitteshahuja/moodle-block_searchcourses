@@ -21,32 +21,25 @@ define(['jquery', 'core/config', 'jqueryui', 'core/templates', 'block_searchcour
                         $(loadingImg).attr("class", "block_searchcourses-loader");
                         $(loadingImg).insertAfter($(this));
                     },
-                    response: function (event, ui) {
-                        // Show a loading icon
+                    response: function(event, ui){
+                        //hide the loading img
                         $('.block_searchcourses-loader').hide();
 
-                    },
-                    focus: function (event, ui) {
-                        console.log("foc");
-                    },
-                    select: function (event, ui) {
-                        console.log(ui);
-                        courseinfo.showcourseinfo(ui.item);
-                        /*$( "#project" ).val( ui.item.label );
-                        $( "#project-id" ).val( ui.item.value );
-                        $( "#project-description" ).html( ui.item.desc );
-                        $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );*/
-                        //return false;
+
                     }
                 }).autocomplete("instance")._renderItem = function (ul, item) {
-                return $("<li>")
-                    .append("<div class='courseresultnode'>\n" +
-                        "  <span><strong>Full Name: </strong> <span class='label label-info'>" + item.fullname + "</span> </p>\n" +
-                        "    <p><strong> Short Name: </strong><span class='label label-info'> " + item.shortname + " </span> </p>\n" +
-                        "     <p><strong> ID Number: </strong> <span class='label label-info'>" + item.idnumber + " </span> </p>\n" +
-                        "  <p><strong> Category: </strong> <span class='label label-info'>" + item.category + " </span> </p>\n" +
-                        "</div>")
-                    .appendTo(ul);
+                var that = $(this);
+                var template = templates.render('block_searchcourses/courseinfo',
+                    {
+                        'longname' : item.fullname,
+                        'course_url': course_url+ item.id
+                    })
+                    .done(function (html) {
+                        return $("<li>").append(html).appendTo(ul);
+                    }).fail(function (ex) {
+                });
+                //this is need for the autocomplete to work
+                return $("<li>").appendTo(ul);
             };
         }
 
