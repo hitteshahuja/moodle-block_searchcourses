@@ -20,11 +20,9 @@ use renderable;
 use renderer_base;
 use templatable;
 
-class searchform implements renderable, templatable
-{
+class searchform implements renderable, templatable {
 
-    public function export_for_template(renderer_base $output)
-    {
+    public function export_for_template(renderer_base $output) {
         $data = array('mycourseslabel' => get_string('my_courses_label', 'block_searchcourses'));
         return $data;
     }
